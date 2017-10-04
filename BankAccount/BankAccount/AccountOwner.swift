@@ -9,7 +9,7 @@ class AccountOwner {
     }
 
     private func validate(name: String) -> Bool{
-        if name.count < 2 {
+        if name.count < 2 || name.count > 10 {
             return false
         }
         return true

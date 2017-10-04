@@ -6,8 +6,10 @@ class BankAccountTests: XCTestCase {
     private let validLastName = "Hill"
     private let validEmail = "a.hill@abcfinancial.com"
 
-    private let invalidFirstName = "A"
-    private let invalidLastName = "H"
+    private let invalidShortFirstName = "A"
+    private let invalidLongFirstName = "ABCDEFGHIJK"
+    private let invalidShortLastName = "H"
+    private let invalidLongLastName = "ABCDEFGHIJK"
     private let invalidEmail = "a.H"
 
     func testAccountOwner_ValidFirstName_ValidLastName_ValidEmail_CanBeInstantiated() {
@@ -15,13 +17,23 @@ class BankAccountTests: XCTestCase {
         XCTAssertNotNil(accountOwner)
     }
 
-    func testAccountOwner_InvalidFirstName_CanNotBeInstantiated() {
-        let accountOwner = AccountOwner(firstName: invalidFirstName, lastName: validLastName, email: validEmail)
+    func testAccountOwner_InvalidFirstName_ToShort_CanNotBeInstantiated() {
+        let accountOwner = AccountOwner(firstName: invalidShortFirstName, lastName: validLastName, email: validEmail)
         XCTAssertNil(accountOwner)
     }
 
-    func testAccountOwner_InvalidLastName_CanNotBeInstantiated() {
-        let accountOwner = AccountOwner(firstName: validFirstName, lastName: invalidLastName, email: validEmail)
+    func testAccountOwner_InvalidFirstName_ToLong_CanNotBeInstantiated() {
+        let accountOwner = AccountOwner(firstName: invalidLongFirstName, lastName: validLastName, email: validEmail)
+        XCTAssertNil(accountOwner)
+    }
+
+    func testAccountOwner_InvalidLastName_ToShort_CanNotBeInstantiated() {
+        let accountOwner = AccountOwner(firstName: validFirstName, lastName: invalidShortLastName, email: validEmail)
+        XCTAssertNil(accountOwner)
+    }
+
+    func testAccountOwner_InvalidLastName_ToLong_CanNotBeInstantiated() {
+        let accountOwner = AccountOwner(firstName: validFirstName, lastName: invalidLongLastName, email: validEmail)
         XCTAssertNil(accountOwner)
     }
 
