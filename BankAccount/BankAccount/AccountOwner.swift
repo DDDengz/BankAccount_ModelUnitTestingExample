@@ -3,6 +3,9 @@ class AccountOwner {
         if firstName.count < 2 {
             return nil
         }
+        if lastName.count < 2 {
+            return nil
+        }
         return
     }
 }
