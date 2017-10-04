@@ -12,6 +12,9 @@
 		4C8B2A821F846B8C0049ECEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8B2A801F846B8C0049ECEC /* Main.storyboard */; };
 		4C8B2A841F846B8C0049ECEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8B2A831F846B8C0049ECEC /* Assets.xcassets */; };
 		4C8B2A871F846B8C0049ECEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8B2A851F846B8C0049ECEC /* LaunchScreen.storyboard */; };
+		4C8B2A9D1F846C150049ECEC /* BankAccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B2A9C1F846C150049ECEC /* BankAccountTests.swift */; };
+		4C8B2A9F1F846CD90049ECEC /* AccountOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B2A9E1F846CD90049ECEC /* AccountOwner.swift */; };
+		4C8B2AA01F846CD90049ECEC /* AccountOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B2A9E1F846CD90049ECEC /* AccountOwner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,8 @@
 		4C8B2A881F846B8C0049ECEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C8B2A8D1F846B8D0049ECEC /* BankAccountTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankAccountTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8B2A931F846B8D0049ECEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C8B2A9C1F846C150049ECEC /* BankAccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountTests.swift; sourceTree = "<group>"; };
+		4C8B2A9E1F846CD90049ECEC /* AccountOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOwner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +86,7 @@
 				4C8B2A831F846B8C0049ECEC /* Assets.xcassets */,
 				4C8B2A851F846B8C0049ECEC /* LaunchScreen.storyboard */,
 				4C8B2A881F846B8C0049ECEC /* Info.plist */,
+				4C8B2A9E1F846CD90049ECEC /* AccountOwner.swift */,
 			);
 			path = BankAccount;
 			sourceTree = "<group>";
@@ -89,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				4C8B2A931F846B8D0049ECEC /* Info.plist */,
+				4C8B2A9C1F846C150049ECEC /* BankAccountTests.swift */,
 			);
 			path = BankAccountTests;
 			sourceTree = "<group>";
@@ -147,8 +154,8 @@
 					};
 					4C8B2A8C1F846B8D0049ECEC = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 4C8B2A781F846B8C0049ECEC;
 					};
 				};
 			};
@@ -196,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C8B2A9F1F846CD90049ECEC /* AccountOwner.swift in Sources */,
 				4C8B2A7F1F846B8C0049ECEC /* ViewController.swift in Sources */,
 				4C8B2A7D1F846B8C0049ECEC /* AppDelegate.swift in Sources */,
 			);
@@ -205,6 +213,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C8B2A9D1F846C150049ECEC /* BankAccountTests.swift in Sources */,
+				4C8B2AA01F846CD90049ECEC /* AccountOwner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,16 +389,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CY96495443;
 				INFOPLIST_FILE = BankAccountTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.charland.BankAccountTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BankAccount.app/BankAccount";
 			};
 			name = Debug;
 		};
@@ -396,7 +406,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CY96495443;
 				INFOPLIST_FILE = BankAccountTests/Info.plist;
@@ -405,7 +415,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BankAccount.app/BankAccount";
 			};
 			name = Release;
 		};
