@@ -8,8 +8,12 @@ class BankAccountTests: XCTestCase {
 
     private let invalidShortFirstName = "A"
     private let invalidLongFirstName = "ABCDEFGHIJK"
+    private let invalidFirstNameWithSpaces = "A B"
+
     private let invalidShortLastName = "H"
     private let invalidLongLastName = "ABCDEFGHIJK"
+    private let invalidLastNameWithSpaces = "A B"
+
     private let invalidEmail = "a.H"
 
     func testAccountOwner_ValidFirstName_ValidLastName_ValidEmail_CanBeInstantiated() {
@@ -27,6 +31,11 @@ class BankAccountTests: XCTestCase {
         XCTAssertNil(accountOwner)
     }
 
+    func testAccountOwner_InvalidFirstName_ContainsSpaces_CanNotBeInstantiated() {
+        let accountOwner = AccountOwner(firstName: invalidFirstNameWithSpaces, lastName: validLastName, email: validEmail)
+        XCTAssertNil(accountOwner)
+    }
+
     func testAccountOwner_InvalidLastName_ToShort_CanNotBeInstantiated() {
         let accountOwner = AccountOwner(firstName: validFirstName, lastName: invalidShortLastName, email: validEmail)
         XCTAssertNil(accountOwner)
@@ -34,6 +43,11 @@ class BankAccountTests: XCTestCase {
 
     func testAccountOwner_InvalidLastName_ToLong_CanNotBeInstantiated() {
         let accountOwner = AccountOwner(firstName: validFirstName, lastName: invalidLongLastName, email: validEmail)
+        XCTAssertNil(accountOwner)
+    }
+
+    func testAccountOwner_InvalidLastName_ContainsSpaces_CanNotBeInstantiated() {
+        let accountOwner = AccountOwner(firstName: validFirstName, lastName: invalidLastNameWithSpaces, email: validEmail)
         XCTAssertNil(accountOwner)
     }
 
