@@ -3,6 +3,9 @@ class AccountOwner {
         guard validate(name: firstName) && validate(name: lastName) else {
             return nil
         }
+        if(!email.contains("@")) {
+            return nil
+        }
     }
 
     private func validate(name: String) -> Bool{
