@@ -1,11 +1,14 @@
 class AccountOwner {
     init?(firstName: String, lastName: String, email: String) {
-        if firstName.count < 2 {
+        guard validate(name: firstName) && validate(name: lastName) else {
             return nil
         }
-        if lastName.count < 2 {
-            return nil
+    }
+
+    private func validate(name: String) -> Bool{
+        if name.count < 2 {
+            return false
         }
-        return
+        return true
     }
 }
