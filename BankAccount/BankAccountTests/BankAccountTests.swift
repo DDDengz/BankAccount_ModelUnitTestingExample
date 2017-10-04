@@ -15,17 +15,17 @@ class BankAccountTests: XCTestCase {
         XCTAssertNotNil(accountOwner)
     }
 
-    func testAccountOwner_InvalidFirstName_ValidFirstName_ValidEmail_CanNotBeInstantiated() {
+    func testAccountOwner_InvalidFirstName_CanNotBeInstantiated() {
         let accountOwner = AccountOwner(firstName: invalidFirstName, lastName: validLastName, email: validEmail)
         XCTAssertNil(accountOwner)
     }
 
-    func testAccountOwner_ValidFirstName_InvalidFirstName_ValidEmail_CanNotBeInstantiated() {
+    func testAccountOwner_InvalidLastName_CanNotBeInstantiated() {
         let accountOwner = AccountOwner(firstName: validFirstName, lastName: invalidLastName, email: validEmail)
         XCTAssertNil(accountOwner)
     }
 
-    func testAccountOwner_ValidFirstName_ValidFirstName_InvalidEmail_CanNotBeInstantiated() {
+    func testAccountOwner_InvalidEmail_CanNotBeInstantiated() {
         let accountOwner = AccountOwner(firstName: validFirstName, lastName: validLastName, email: invalidEmail)
         XCTAssertNil(accountOwner)
     }
