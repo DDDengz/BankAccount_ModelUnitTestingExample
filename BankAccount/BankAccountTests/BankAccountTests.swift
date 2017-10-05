@@ -16,7 +16,10 @@ class BankAccountTests: XCTestCase {
     private let invalidLastNameWithSpaces = "A B"
     private let invalidLastNameWithNumbers = "W1LL"
 
-    private let invalidEmail = "a.H"
+    private let invalidNoAtEmail = "a.H"
+    private let invalidMissingNameEmail = "@dog.com"
+    private let invalidMissingHostEmail = "frank@.com"
+     private let invalidMissingTargetEmail = "frank@dog."
 
     func testAccountOwner_ValidFirstName_ValidLastName_ValidEmail_CanBeInstantiated() {
         let accountOwner = AccountOwner(firstName: validFirstName, lastName: validLastName, email: validEmail)
@@ -63,8 +66,23 @@ class BankAccountTests: XCTestCase {
         XCTAssertNil(accountOwner)
     }
 
-    func testAccountOwner_InvalidEmail_CanNotBeInstantiated() {
-        let accountOwner = AccountOwner(firstName: validFirstName, lastName: validLastName, email: invalidEmail)
+    func testAccountOwner_InvalidEmail_NoAt_CanNotBeInstantiated() {
+        let accountOwner = AccountOwner(firstName: validFirstName, lastName: validLastName, email: invalidNoAtEmail)
+        XCTAssertNil(accountOwner)
+    }
+
+    func testAccountOwner_InvalidEmail_MissingName_CanNotBeInstantiated() {
+        let accountOwner = AccountOwner(firstName: validFirstName, lastName: validLastName, email: invalidMissingNameEmail)
+        XCTAssertNil(accountOwner)
+    }
+
+    func testAccountOwner_InvalidEmail_MissingHost_CanNotBeInstantiated() {
+        let accountOwner = AccountOwner(firstName: validFirstName, lastName: validLastName, email: invalidMissingHostEmail)
+        XCTAssertNil(accountOwner)
+    }
+
+    func testAccountOwner_InvalidEmail_MissingTarget_CanNotBeInstantiated() {
+        let accountOwner = AccountOwner(firstName: validFirstName, lastName: validLastName, email: invalidMissingTargetEmail)
         XCTAssertNil(accountOwner)
     }
 }
