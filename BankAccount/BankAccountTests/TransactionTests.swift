@@ -1,5 +1,10 @@
 import XCTest
 
+class CustomDescriptionValidator: DescriptionValidator {
+    override func validate(_ description: String) -> Bool {
+        return true
+    }
+}
 class TransactionTests: XCTestCase {
 
     func testDescription_Empty_CanNotBeInstantiated() {
@@ -12,5 +17,11 @@ class TransactionTests: XCTestCase {
         let description = "JscxTD4oBZZzSXRc4OhXH"
         let transaction = Transaction(description: description)
         XCTAssertNil(transaction)
+    }
+
+    func testDescription_CustomValidator_CanBeInstantiated() {
+        let description = ""
+        let transaction = Transaction(description: description, descriptionValidator: CustomDescriptionValidator())
+        XCTAssertNotNil(transaction)
     }
 }
