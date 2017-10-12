@@ -19,6 +19,8 @@
 		4C8B2AAC1F8D4EBE0049ECEC /* TransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B2AAB1F8D4EBE0049ECEC /* TransactionTests.swift */; };
 		4C8B2AAE1F8D51B80049ECEC /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B2AAD1F8D51B80049ECEC /* Transaction.swift */; };
 		4C8B2AAF1F8D51B80049ECEC /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B2AAD1F8D51B80049ECEC /* Transaction.swift */; };
+		4C95F7611F8FE37B0065BD6D /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95F7601F8FE37B0065BD6D /* BankAccount.swift */; };
+		4C95F7621F8FE37B0065BD6D /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95F7601F8FE37B0065BD6D /* BankAccount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,7 @@
 		4C8B2A9E1F846CD90049ECEC /* AccountOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOwner.swift; sourceTree = "<group>"; };
 		4C8B2AAB1F8D4EBE0049ECEC /* TransactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTests.swift; sourceTree = "<group>"; };
 		4C8B2AAD1F8D51B80049ECEC /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		4C95F7601F8FE37B0065BD6D /* BankAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,7 @@
 				4C8B2A831F846B8C0049ECEC /* Assets.xcassets */,
 				4C8B2A851F846B8C0049ECEC /* LaunchScreen.storyboard */,
 				4C8B2A881F846B8C0049ECEC /* Info.plist */,
+				4C95F7601F8FE37B0065BD6D /* BankAccount.swift */,
 				4C8B2A9E1F846CD90049ECEC /* AccountOwner.swift */,
 				4C8B2AAD1F8D51B80049ECEC /* Transaction.swift */,
 			);
@@ -104,8 +108,8 @@
 			children = (
 				4C8B2A931F846B8D0049ECEC /* Info.plist */,
 				4C8B2A9C1F846C150049ECEC /* BankAccountTests.swift */,
-				4C8B2AAB1F8D4EBE0049ECEC /* TransactionTests.swift */,
 				4C557C4B1F8FE237001C9014 /* AccountOwnerTests.swift */,
+				4C8B2AAB1F8D4EBE0049ECEC /* TransactionTests.swift */,
 			);
 			path = BankAccountTests;
 			sourceTree = "<group>";
@@ -215,6 +219,7 @@
 			files = (
 				4C8B2A9F1F846CD90049ECEC /* AccountOwner.swift in Sources */,
 				4C8B2A7F1F846B8C0049ECEC /* ViewController.swift in Sources */,
+				4C95F7611F8FE37B0065BD6D /* BankAccount.swift in Sources */,
 				4C8B2AAE1F8D51B80049ECEC /* Transaction.swift in Sources */,
 				4C8B2A7D1F846B8C0049ECEC /* AppDelegate.swift in Sources */,
 			);
@@ -225,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C8B2A9D1F846C150049ECEC /* BankAccountTests.swift in Sources */,
+				4C95F7621F8FE37B0065BD6D /* BankAccount.swift in Sources */,
 				4C8B2AAC1F8D4EBE0049ECEC /* TransactionTests.swift in Sources */,
 				4C8B2AAF1F8D51B80049ECEC /* Transaction.swift in Sources */,
 				4C8B2AA01F846CD90049ECEC /* AccountOwner.swift in Sources */,
