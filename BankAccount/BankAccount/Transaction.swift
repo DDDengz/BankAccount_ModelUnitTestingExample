@@ -7,6 +7,9 @@ class DescriptionValidator {
     }
 }
 class Transaction {
+
+    let description:String
+
     convenience init?(description: String) {
         self.init(description: description, descriptionValidator: DescriptionValidator())
     }
@@ -15,5 +18,6 @@ class Transaction {
         if !descriptionValidator.validate(description) {
             return nil
         }
+        self.description = description
     }
 }

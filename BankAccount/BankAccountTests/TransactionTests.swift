@@ -24,4 +24,10 @@ class TransactionTests: XCTestCase {
         let transaction = Transaction(description: description, descriptionValidator: CustomDescriptionValidator())
         XCTAssertNotNil(transaction)
     }
+
+    func testDescription_Valid_IsSet() {
+        let description = "valid"
+        let transaction = Transaction(description: description)
+        XCTAssertEqual("valid", transaction?.description)
+    }
 }
