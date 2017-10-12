@@ -8,14 +8,9 @@ class BankAccount {
 
     init?(accountName: String, accountNameValidator: AccountNameValidator? = nil) {
 
-        if let accountNameValidator = accountNameValidator {
-            if(!accountNameValidator.validate(accountName)) {
-                    return nil
-            }
-        } else {
-            if(!AccountNameValidator().validate(accountName)) {
-                return nil
-            }
+        let accountNameValidator2 = accountNameValidator ?? AccountNameValidator()
+        if !accountNameValidator2.validate(accountName) {
+            return nil
         }
     }
 }
