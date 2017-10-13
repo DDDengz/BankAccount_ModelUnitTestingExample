@@ -21,9 +21,14 @@ class AccountOwnerTests: XCTestCase {
     private let invalidMissingHostEmail = "frank@.com"
     private let invalidMissingTargetEmail = "frank@dog."
 
+    static let validAccount = AccountOwnerTests().getValid()
+
+    func getValid() -> AccountOwner {
+        return AccountOwner(firstName: validFirstName, lastName: validLastName, email: validEmail)!
+    }
+
     func testAccountOwner_ValidFirstName_ValidLastName_ValidEmail_CanBeInstantiated() {
-        let accountOwner = AccountOwner(firstName: validFirstName, lastName: validLastName, email: validEmail)
-        XCTAssertNotNil(accountOwner)
+        XCTAssertNotNil(getValid())
     }
 
     func testAccountOwner_InvalidFirstName_ToShort_CanNotBeInstantiated() {
