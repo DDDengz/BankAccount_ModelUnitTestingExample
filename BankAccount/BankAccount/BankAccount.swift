@@ -16,6 +16,10 @@ class BankAccount {
         if String(accountNumber).count != 9 {
             return nil
         }
+
+        if sortingCode.count != 6 || !sortingCode.starts(with: "40") && !sortingCode.starts(with: "49"){
+            return nil
+        }
     }
 }
 
