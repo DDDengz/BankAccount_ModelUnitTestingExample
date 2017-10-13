@@ -6,7 +6,7 @@ class AccountNameValidator {
 
 class BankAccount {
 
-    init?(accountName: String, accountNumber: Int, accountNameValidator: AccountNameValidator? = nil) {
+    init?(accountName: String, accountNumber: Int, sortingCode: String, accountNameValidator: AccountNameValidator? = nil) {
 
         let accountNameValidator2 = accountNameValidator ?? AccountNameValidator()
         if !accountNameValidator2.validate(accountName) {
