@@ -1,6 +1,6 @@
 class AccountNameValidator {
     func validate(_ name: String) -> Bool {
-        return !name.isEmpty
+        return !name.isEmpty  && name.count < 20
     }
 }
 
