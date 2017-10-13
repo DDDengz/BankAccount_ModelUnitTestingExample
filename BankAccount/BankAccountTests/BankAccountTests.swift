@@ -9,6 +9,11 @@ class BankAccountTests: XCTestCase {
     let validAccountType = AccountType.currentAccount
     let validTransaction = [Transaction]()
 
+    func testAccountName_valid_canBeInstantiated() {
+        let r = BankAccount(accountName: validAccountName, accountNumber: validAccountNumber, sortingCode: validSortingCode, type: validAccountType, transactions: validTransaction)
+        XCTAssertNotNil(r)
+    }
+
     func testAccountName_empty_canNotBeInstantiated() {
         let r = BankAccount(accountName: "", accountNumber: validAccountNumber, sortingCode: validSortingCode, type: validAccountType, transactions: validTransaction)
         XCTAssertNil(r)
@@ -19,11 +24,6 @@ class BankAccountTests: XCTestCase {
         XCTAssertNil(r)
     }
 
-    func testAccountName_valid_canBeInstantiated() {
-        let r = BankAccount(accountName: validAccountName, accountNumber: validAccountNumber, sortingCode: validSortingCode, type: validAccountType, transactions: validTransaction)
-        XCTAssertNotNil(r)
-    }
-
     func testAccountNumber_tooShort_canNotBeInstantiated() {
         let r = BankAccount(accountName: validAccountName, accountNumber: 1, sortingCode: validSortingCode, type: validAccountType, transactions: validTransaction)
         XCTAssertNil(r)
@@ -32,11 +32,6 @@ class BankAccountTests: XCTestCase {
     func testAccountNumber_tooLong_canNotBeInstantiated() {
         let r = BankAccount(accountName: validAccountName, accountNumber: 12345678910, sortingCode: validSortingCode, type: validAccountType, transactions: validTransaction)
         XCTAssertNil(r)
-    }
-
-    func testAccountNumber_valid_canBeInstantiated() {
-        let r = BankAccount(accountName: validAccountName, accountNumber: validAccountNumber, sortingCode: validSortingCode, type: validAccountType, transactions: validTransaction)
-        XCTAssertNotNil(r)
     }
 
     func testSortingCode_doesntStartWithCorrectNumber_canNotBeInstantiated() {
@@ -54,11 +49,6 @@ class BankAccountTests: XCTestCase {
         XCTAssertNil(r)
     }
 
-    func testSortingCode_valid_canBeInstantiated() {
-        let r = BankAccount(accountName: validAccountName, accountNumber: validAccountNumber, sortingCode: validSortingCode, type: validAccountType, transactions: validTransaction)
-        XCTAssertNotNil(r)
-    }
-
     func testSortingCode_valid2_canBeInstantiated() {
         let r = BankAccount(accountName: validAccountName, accountNumber: validAccountNumber, sortingCode: validSortingCode2, type: validAccountType, transactions: validTransaction)
         XCTAssertNotNil(r)
@@ -71,11 +61,6 @@ class BankAccountTests: XCTestCase {
 
     func testAccountType_valid2_canBeInstantiated() {
         let r = BankAccount(accountName: validAccountName, accountNumber: validAccountNumber, sortingCode: validSortingCode2, type: AccountType.savingsAccount, transactions: validTransaction)
-        XCTAssertNotNil(r)
-    }
-
-    func testTransactions_valid_canBeInstantiated() {
-        let r = BankAccount(accountName: validAccountName, accountNumber: validAccountNumber, sortingCode: validSortingCode2, type: validAccountType, transactions: validTransaction)
         XCTAssertNotNil(r)
     }
 }
