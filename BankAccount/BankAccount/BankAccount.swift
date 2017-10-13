@@ -10,7 +10,7 @@ enum AccountType {
 
 class BankAccount {
 
-    init?(accountName: String, accountNumber: Int, sortingCode: String, type: AccountType, accountNameValidator: AccountNameValidator? = nil) {
+    init?(accountName: String, accountNumber: Int, sortingCode: String, type: AccountType, transactions: [Transaction], accountNameValidator: AccountNameValidator? = nil) {
 
         let accountNameValidator2 = accountNameValidator ?? AccountNameValidator()
         if !accountNameValidator2.validate(accountName) {

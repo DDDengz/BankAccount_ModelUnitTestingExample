@@ -9,6 +9,7 @@ class TransactionTests: XCTestCase {
 
     let validDescription = "valid"
     let validDate = Date()
+    let validIncoming = true
     let validAmount = "1.00"
 
     func testDescription_Empty_CanNotBeInstantiated() {
