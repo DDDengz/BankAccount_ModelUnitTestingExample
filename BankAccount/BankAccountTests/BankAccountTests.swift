@@ -10,9 +10,16 @@ class BankAccountTests: XCTestCase {
     let validTransaction = [Transaction]()
     let validOwner = [AccountOwner](repeatElement(AccountOwnerTests.validAccount, count: 1))
 
-    func testInit_valid_canBeInstantiated() {
+    func testInit_validCredentials_canBeInstantiated() {
         let r = BankAccount(accountName: validAccountName, accountNumber: validAccountNumber, sortingCode: validSortingCode, type: validAccountType, transactions: validTransaction, owners: validOwner)
         XCTAssertNotNil(r)
+        XCTAssertEqual(r!.accountName, validAccountName)
+        XCTAssertEqual(r!.accountNumber, validAccountNumber)
+        XCTAssertEqual(r!.sortingCode, validSortingCode)
+        XCTAssertEqual(r!.type, validAccountType)
+        XCTAssertEqual(r!.accountNumber, validAccountNumber)
+        XCTAssertEqual(r!.transactions.count, validTransaction.count)
+        XCTAssertEqual(r!.owners.count, validOwner.count)
     }
 
     func testAccountName_empty_canNotBeInstantiated() {

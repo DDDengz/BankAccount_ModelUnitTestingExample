@@ -10,7 +10,21 @@ enum AccountType {
 
 class BankAccount {
 
+    let accountName: String
+    let accountNumber: Int
+    let sortingCode: String
+    let type: AccountType
+    let transactions: [Transaction]
+    let owners: [AccountOwner]
+
     init?(accountName: String, accountNumber: Int, sortingCode: String, type: AccountType, transactions: [Transaction], owners: [AccountOwner], accountNameValidator: AccountNameValidator? = nil) {
+
+        self.accountName = accountName
+        self.accountNumber = accountNumber
+        self.sortingCode = sortingCode
+        self.type = type
+        self.transactions = transactions
+        self.owners = owners
 
         guard validate(accountName: accountName, accountNumber: accountNumber, sortingCode: sortingCode, type: type, transactions: transactions, owners: owners) else {
             return nil
