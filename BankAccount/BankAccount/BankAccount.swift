@@ -4,9 +4,13 @@ class AccountNameValidator {
     }
 }
 
+enum AccountType {
+    case currentAccount, savingsAccount
+}
+
 class BankAccount {
 
-    init?(accountName: String, accountNumber: Int, sortingCode: String, accountNameValidator: AccountNameValidator? = nil) {
+    init?(accountName: String, accountNumber: Int, sortingCode: String, type: AccountType, accountNameValidator: AccountNameValidator? = nil) {
 
         let accountNameValidator2 = accountNameValidator ?? AccountNameValidator()
         if !accountNameValidator2.validate(accountName) {
